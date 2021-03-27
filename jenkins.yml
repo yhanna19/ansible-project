@@ -5,4 +5,3 @@
   tasks:
   - name: Compile using Maven
     shell: mvn compile
-...
