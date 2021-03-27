@@ -12,13 +12,9 @@ pipeline {
             sh 'mvn compile' 
          } 
         }
-        stage('Ansible Init'){
+        stage('Invoke Ansible Playbook'){
            steps {
-              script {
-                 def tfHome = tool name: 'my_ansible'
-                 env.PATH = "${tfHome}:${env.PATH}"
-                 sh 'ansible --version'
-              } 
+              ansiblePlaybook(playbook: 'ansible.yml')
            }
         }
     }

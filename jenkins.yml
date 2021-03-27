@@ -1,16 +1,8 @@
-- name: trigger
+---
+- name: Maven Build
   hosts: localhost
-  vars:
-    Uname: "admin"
-    Pass: "caltech2020"
-    HostName: "localhost:8080"
-    TokenName: "Legacy Token"
+  
   tasks:
-  - name: Queue build
-    uri:
-      url: "http://{{ HostName }}/job/{{ JobName }}/build?token={{ TokenName }}"
-      method: POST
-      user: "{{ Uname }}"
-      password: "{{ Pass }}"
-      force_basic_auth: yes
-      status_code: 201
+  - name: Compile using Maven
+    shell: mvn compile
+...
