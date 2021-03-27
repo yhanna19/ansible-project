@@ -1,7 +1,8 @@
 ---
-- name: Maven Build
+- name: Maven Build and Deploying
   hosts: localhost
   
   tasks:
   - name: Compile using Maven
     shell: mvn compile
+    shell: mvn package -DskipTests
