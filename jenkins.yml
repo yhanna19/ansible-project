@@ -5,16 +5,3 @@
   tasks:
   - name: Compile using Maven
     shell: mvn compile
-  - name: create S3 bucket
-    s3_bucket:
-      name: “ansible-project”
-      aws_access_key: “ASIARKPSX4IOQBYCR5FQ”
-      aws_secret_key: ”S6zbF3LhEi08aTD4XHRlB9rTemAQqeUHDpuhZyeC”
-      security_token:  “FwoGZXIvYXdzEO3//////////wEaDGGo3Jd4HR0uDPSlASK3ASnsZeC5FyU++dJHkDrjo66Mj0KodWVNw5nK/H8VJjhgtwCJLzemppWK5VpQLhBUg21wruZ4rrvdMA7Mln7b0GBOVknu7yyHAAutQc5T3QCSs9UtqcU/4TY/ZHYcRm8gmU/ZvasHKDSWpcCQI/OC9R6vKYYK4tC5N+4SWwEInuCb35Skf+OUE3Fd9g/BakF5gNXj7FPYirlFmTIjLy3kIhOBLEaD6+K8o7EOXq1xfG4gY+My2RO5kCiZxfqCBjIt1l1CWQsI9qf4RspiBr3CmG6Yickv7qz9BAkJJvCKp3DhETdbya/pqtT3SnVs”
-      policy: "{{ lookup( 'file','bpolicy.json' )}}"
-      state: present
-      region: us-east-1
-      versioning: no
-      tags:
-         name: “ansible-project”
-         type: example
