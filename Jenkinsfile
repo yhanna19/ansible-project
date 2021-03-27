@@ -5,7 +5,7 @@ pipeline {
    //    git 'my_git'
    //    ansible 'my_ansible'
    // }
-   //  stages {
+     stages {
    //      stage('Code Compilation') { 
    //       steps { 
    //          echo 'Checking out git repo' 
@@ -18,4 +18,4 @@ pipeline {
            }
         }
     }
-//}
+}
