@@ -8,13 +8,12 @@ pipeline {
         stage('Code Compilation') { 
          steps { 
             echo 'Checking out git repo' 
-            git url: 'https://github.com/yhanna19/jenkins-project.git'         
-            sh 'mvn compile' 
+            git url: 'https://github.com/yhanna19/jenkins-project.git'
          } 
         }
         stage('Invoke Ansible Playbook'){
            steps {
-              ansiblePlaybook(playbook: 'ansible.yml')
+              ansiblePlaybook(playbook: 'jenkins.yml')
            }
         }
     }
